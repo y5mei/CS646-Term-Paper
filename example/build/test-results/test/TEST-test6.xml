@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="test6" tests="1" skipped="0" failures="0" errors="0" timestamp="2021-08-02T01:06:10" hostname="MeiMBP.local" time="6.01">
+  <properties/>
+  <testcase name="testAppHasAGreeting" classname="test6" time="6.01"/>
+  <system-out><![CDATA[]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>

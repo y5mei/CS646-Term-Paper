@@ -1,0 +1,41 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+group 'ca.waterloo'
+version '1.0-SNAPSHOT'
+
+// add repository MavenCenter
+repositories {
+    mavenCentral()
+}
+
+// add dependency to JUnit4
+dependencies {
+    testImplementation 'junit:junit:4.12'
+    testImplementation 'org.junit.vintage:junit-vintage-engine:4.12.3'
+}
+
+// add additional unit test file directories
+sourceSets.test.java{
+    srcDirs = ['src/test/additionalTests/']
+}
+
+application{
+    // Define the main class for the application.
+    mainClass = 'lab'
+}
+test {
+    useJUnitPlatform()
+    // do this print at last
+    doLast {println "======== test completed ============"}
+}
+
+if (hasProperty('buildScan')) {
+    buildScan {
+        termsOfServiceUrl = 'https://gradle.com/terms-of-service'
+        termsOfServiceAgree = 'yes'
+    }
+}
+tasks.named("test"){maxParallelForks = 12}
